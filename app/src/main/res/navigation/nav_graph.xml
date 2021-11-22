@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.um.feri.cs.upora.poranavigationexample.MainFragment"
+        android:label="Main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_InfoFragment"
+            app:destination="@id/InfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_MainFragment_to_ActionFragment"
+            app:destination="@id/ActionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/InfoFragment"
+        android:name="com.um.feri.cs.upora.poranavigationexample.InfoFragment"
+        android:label="Info"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/ActionFragment"
+        android:name="com.um.feri.cs.upora.poranavigationexample.ActionFragment"
+        android:label="Action">
+        <argument
+            android:name="name"
+            android:defaultValue="none"
+            app:argType="string" />
+        <argument
+            android:name="year"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.um.feri.cs.upora.poranavigationexample.SettingsFragment"
+        android:label="Settings">
+        <!--Global action-->
+    </fragment>
+
+    <action android:id="@+id/action_to_settings_fragment"
+        app:destination="@id/SettingsFragment"/>
+
+
+</navigation>
