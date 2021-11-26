@@ -61,11 +61,11 @@ class MainFragment : Fragment() {
             val tmp = binding.etYear.text.toString().toInt()
             val year = Calendar.getInstance().get(Calendar.YEAR)
             if (tmp < year - 200) {
-                binding.etYear.setError("Too old animal")
+                binding.etYear.setError("Too old")
                 ok = false
             }
             if (tmp > year) {
-                binding.etYear.setError("Animal not born yet")
+                binding.etYear.setError("Not born yet")
                 ok = false
             }
         }
